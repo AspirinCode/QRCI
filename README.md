@@ -13,10 +13,17 @@ rdkit==2024.09.3
 
 ## Data
 
-● [DrugBank](https://go.drugbank.com/)  
-● [iPPI-DB](https://ippidb.pasteur.fr/)  
-● [COCONUT: the COlleCtion of Open NatUral producTs](https://coconut.naturalproducts.net/)  
-● [ChEMBL35](https://www.ebi.ac.uk/chembl/)  
+* [DrugBank](https://go.drugbank.com/)  
+* [iPPI-DB](https://ippidb.pasteur.fr/)  
+* [COCONUT: the COlleCtion of Open NatUral producTs](https://coconut.naturalproducts.net/)  
+* [ChEMBL35](https://www.ebi.ac.uk/chembl/)  
+
+
+### Molecular Standardization
+
+https://www.rdkit.org/docs/source/rdkit.Chem.MolStandardize.rdMolStandardize.html
+
+https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 
 
 
