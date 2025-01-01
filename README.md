@@ -13,7 +13,10 @@ rdkit==2024.09.3
 
 ## Data
 
-
+● [DrugBank](https://go.drugbank.com/)  
+● [iPPI-DB]()  
+● [COCONUT: the COlleCtion of Open NatUral producTs]()  
+● [ChEMBL35](https://www.ebi.ac.uk/chembl/)  
 
 
 
