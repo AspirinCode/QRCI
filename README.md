@@ -3,7 +3,15 @@
 
 ### Quantitative Ring Complexity Index
 
-$QRCI=\frac{TRS}{nRingAtom}\cdot\left(1+\frac{nFusedRing}{nRing+1}\right)+SF+\frac{\sum W_i\cdot D_i}{\sqrt{nRingAtom\cdot TRS}}+\frac{\log(nTotalAtom)}{nRing+1}+W_{macro}\cdot\frac{nMacrocycle}{nRing+1}$
+$QRCI=\frac{TRS}{nRingAtom}\cdot\left(1+\frac{nFusedRing}{nRing+1}\right)+SF+\frac{\sum W_i\cdot D_i}{\sqrt{nRingAtom\cdot TRS}}+\frac{\log(nTotalAtom)}{nRing+1}+W_{macro}\cdot\frac{nMacrocycle}{nRing+1}$  
+
+* **TRS** (Total Ring Size): Sum of all ring sizes.
+* **nRingAtom**: Total number of atoms in all rings.
+* **nRing**: Total number of rings
+* **nFR** (Fused Rings): Count of rings sharing atoms or bonds.
+* **nTotalAtom**: Total number of atoms
+* **nMacrocycle**: total number of macrocycles
+
 
 
 ### Ring Complexity Index
