@@ -7,7 +7,7 @@
 ## Requirements
 ```python
 Python==3.13
-rdkit==2024.09.3
+rdkit==2024.09.5
 
 ```
 
