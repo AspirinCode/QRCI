@@ -22,9 +22,9 @@ Ref: Gasteiger, J., & Jochum, C. (1979). An Algorithm for the Perception of Synt
 
 ## Requirements
 ```python
-Python==3.13
+Python==3.13.1
 rdkit==2024.09.5
-
+scipy==1.14.1
 ```
 
 ## Data
