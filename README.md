@@ -27,7 +27,7 @@ https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 
 
 
-## QEPPI calculation
+## QRCI calculation
 
 ```python
 
