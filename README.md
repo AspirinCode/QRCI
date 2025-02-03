@@ -51,6 +51,19 @@ https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 ```
 
 
+## Analysis
+
+### Spacial Score
+
+```python
+rdkit.Chem.SpacialScore.SPS(mol, normalize=True)
+```
+
+https://rdkit.org/docs/source/rdkit.Chem.SpacialScore.html  
+
+https://github.com/frog2000/Spacial-Score  
+
+
 
 ## License
 Code is released under MIT LICENSE.
