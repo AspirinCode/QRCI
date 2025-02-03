@@ -1,10 +1,9 @@
 # QRCI
 **Quantitative Ring Complexity Index for Evaluating Molecular Structure and Chemical Diversity** 
 
-
 ### Quantitative Ring Complexity Index
 
-
+QRCI=\frac{TRS}{nRingAtoms}\cdot\left(1+\frac{nFusedRings}{nRings+1}\right)+SF+\frac{\sum W_i\cdot D_i}{\sqrt{nRingAtoms\cdot TRS}}+\frac{\log(nTotalAtoms)}{nRings+1}+W_{macro}\cdot\frac{nMacrocycles}{nRings+1}
 
 
 ### Ring Complexity Index
