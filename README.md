@@ -3,8 +3,9 @@
 
 
 
-
-$RCI=\frac{TRS}{nRingAtoms}$
+### Ring Complexity Index
+$RCI=\frac{TRS}{nRingAtoms}$  
+where TRS is the total ring size and $nRingAtoms$ is the number of atoms belonging to a ring.
 
 
 
