@@ -4,6 +4,10 @@
 
 
 
+$RCI=\frac{TRS}{nRingAtoms}$
+
+
+
 ## Requirements
 ```python
 Python==3.13
