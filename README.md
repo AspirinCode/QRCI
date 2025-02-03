@@ -2,11 +2,15 @@
 **Quantitative Ring Complexity Index for Evaluating Molecular Structure and Chemical Diversity** 
 
 
+### Quantitative Ring Complexity Index
+
+
+
 
 ### Ring Complexity Index
 $RCI=\frac{TRS}{nRingAtoms}$  
 where TRS is the total ring size and $nRingAtoms$ is the number of atoms belonging to a ring.
-
+Ref: Gasteiger, J., & Jochum, C. (1979). An Algorithm for the Perception of Synthetically Important Rings. Journal of Chemical Information and Computer Sciences, 19(1), 43–48. https://doi.org/10.1021/ci60017a011  
 
 
 ## Requirements
