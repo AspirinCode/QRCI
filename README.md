@@ -1,5 +1,8 @@
 # QRCI
+
 **Quantitative Ring Complexity Index for Evaluating Molecular Structure and Chemical Diversity** 
+
+![QRCI](https://github.com/AspirinCode/qrci/blob/main/figures/qrci_cover.png)
 
 ### Quantitative Ring Complexity Index
 
