@@ -52,8 +52,17 @@ https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 ## QRCI calculation
 
 ```python
-# calculate QRCI with normalization and entropy-based weight optimization
-calculate_QRCI(smiles_or_mol, weights=None, normalize=True, W_macro=2.0)
+qrci_calc = QRCICalculator(weights='mean')
+score_mean = qrci_calc('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
+print(f"QRCI(default/mean weights): {score_mean:.4f}")
+#QRCI(default/mean weights): 4.0330
+
+***************************************************************************************
+mol = Chem.MolFromSmiles('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
+props = get_qrci_properties(mol)
+print(props)
+#QRCIproperties(nAromHetero=1, nAromCarbo=2, nAliHetero=2, nAliCarbo=0, nSatHetero=1, nSatCarbo=0, nMacrocycles=1)
+
 ```
 
 
