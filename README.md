@@ -9,7 +9,7 @@
 $\mathrm{QRCI}=\frac{\mathrm{TRS}}{N_{\mathrm{ra}}}\left(1+\frac{N_{\mathrm{fr}}}{N_{\mathrm{r}}+1}\right)+\sum_{r}\left[\frac{360}{360-\alpha_{\mathrm{ideal}}(\ell_{r})}\cdot\frac{1}{\ell_{r}}\cdot\lambda_{M}(\ell_{r})\right]+\frac{\sum W_{i}\cdot D_{i}}{\sqrt{N_{\mathrm{ra}}\cdot\mathrm{TRS}}}+\frac{\log(N_{\mathrm{ta}})}{N_{\mathrm{r}}+1}+W_{m}\cdot\frac{N_{\mathrm{mr}}}{N_{\mathrm{r}}+1}$  
 
 * **TRS** (Total Ring Size): Sum of all ring sizes.
-* **nRingAtom**: Total number of atoms in all rings.
+* **N_{\mathrm{ra}}**: Total number of atoms in all rings.
 * **nRing**: Total number of rings
 * **nFR** (Fused Rings): Count of rings sharing atoms or bonds.
 * **nTotalAtom**: Total number of atoms
