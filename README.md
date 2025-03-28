@@ -14,7 +14,9 @@ $\mathrm{QRCI}=\frac{\mathrm{TRS}}{N_{\mathrm{ra}}}\left(1+\frac{N_{\mathrm{fr}}
 * **$N_{\mathrm{fr}}$** (Fused Rings): Count of rings sharing atoms or bonds.
 * **$N_{\mathrm{ta}}$**: Total number of atoms
 * **$N_{\mathrm{mr}}$**: total number of macrocycles
-
+* **$W_{m}$**: Weight for macrocycle descriptors.
+* **$W_{i}$**: Weight for topological descriptors.
+* **$D_{i}$**: Topological ring diversity descriptor.
 
 
 ### Ring Complexity Index
