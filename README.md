@@ -10,10 +10,10 @@ $\mathrm{QRCI}=\frac{\mathrm{TRS}}{N_{\mathrm{ra}}}\left(1+\frac{N_{\mathrm{fr}}
 
 * **TRS** (Total Ring Size): Sum of all ring sizes.
 * **$N_{\mathrm{ra}}$**: Total number of atoms in all rings.
-* **nRing**: Total number of rings
-* **nFR** (Fused Rings): Count of rings sharing atoms or bonds.
-* **nTotalAtom**: Total number of atoms
-* **nMacrocycle**: total number of macrocycles
+* **$N_{\mathrm{r}}$**: Total number of rings
+* **$N_{\mathrm{fr}}$** (Fused Rings): Count of rings sharing atoms or bonds.
+* **$N_{\mathrm{ta}}$**: Total number of atoms
+* **$N_{\mathrm{mr}}$**: total number of macrocycles
 
 
 
