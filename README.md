@@ -51,6 +51,9 @@ https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 
 ## QRCI calculation
 
+Example:[Pacritinib](https://go.drugbank.com/drugs/DB11697)
+
+
 ```python
 qrci_calc = QRCICalculator(weights='mean')
 score_mean = qrci_calc('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
