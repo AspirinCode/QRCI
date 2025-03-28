@@ -85,9 +85,9 @@ https://github.com/frog2000/Spacial-Score
 ### SAscore
 
 ```python
-#Calculating NP_Score
-import npscorer
-fscore = npscorer.readNPModel()
+#Calculating SAscore
+import sascorer
+sascore = sascorer.calculateScore()
 ```
 
 https://greglandrum.github.io/rdkit-blog/posts/2023-12-01-using_sascore_and_npscore.html
@@ -118,6 +118,10 @@ quantitative estimate of protein-protein interaction targeting drug-likeness
 q = ppi.QEPPI_Calculator()
 print("QEPPI.model LOADING...")
 q.load("./QEPPI/QEPPI.model")
+
+smiles = "C=CCN1CC(C(=O)N(CCCN(C)C)C(=O)NCC)C[C@@H]2c3cccc4[nH]cc(c34)C[C@H]21"
+mol = Chem.MolFromSmiles(smiles)
+print(q.qeppi(mol))
 ```
 
 https://github.com/ohuelab/QEPPI  
