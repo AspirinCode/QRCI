@@ -37,7 +37,8 @@ scipy==1.15.1
 * [DrugBank](https://go.drugbank.com/)  
 * [iPPI-DB](https://ippidb.pasteur.fr/)  
 * [COCONUT: the COlleCtion of Open NatUral producTs](https://coconut.naturalproducts.net/)  
-* [ChEMBL35](https://www.ebi.ac.uk/chembl/)  
+* [ChEMBL35](https://www.ebi.ac.uk/chembl/)
+* [PubChem](https://pubchem.ncbi.nlm.nih.gov/)  
 
 
 ### Molecular Standardization
