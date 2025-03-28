@@ -80,6 +80,23 @@ fscore = npscorer.readNPModel()
 https://greglandrum.github.io/rdkit-blog/posts/2023-12-01-using_sascore_and_npscore.html
 
 
+### QED
+
+```python
+from rdkit import Chem
+from rdkit.Chem import QED
+
+smiles = "C=CCN1CC(C(=O)N(CCCN(C)C)C(=O)NCC)C[C@@H]2c3cccc4[nH]cc(c34)C[C@H]21"
+mol = Chem.MolFromSmiles(smiles)
+
+qed_score = QED.qed(mol)
+print(f"QED Score: {qed_score:.3f}")
+#QED Score: 0.605
+```
+
+https://www.rdkit.org/docs/source/rdkit.Chem.QED.html#module-rdkit.Chem.QED
+
+
 ### QEPPI
 quantitative estimate of protein-protein interaction targeting drug-likeness  
 
