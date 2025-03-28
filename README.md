@@ -51,8 +51,8 @@ https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 ## QRCI calculation
 
 ```python
-
-
+# calculate QRCI with normalization and entropy-based weight optimization
+def calculate_QRCI(smiles_or_mol, weights=None, normalize=True, W_macro=2.0)
 ```
 
 
@@ -68,6 +68,30 @@ https://rdkit.org/docs/source/rdkit.Chem.SpacialScore.html
 
 https://github.com/frog2000/Spacial-Score  
 
+
+### SAscore
+
+```python
+#Calculating NP_Score
+import npscorer
+fscore = npscorer.readNPModel()
+```
+
+https://greglandrum.github.io/rdkit-blog/posts/2023-12-01-using_sascore_and_npscore.html
+
+
+### QEPPI
+quantitative estimate of protein-protein interaction targeting drug-likeness  
+
+```python
+#Calculates QEPPI
+q = ppi.QEPPI_Calculator()
+print("QEPPI.model LOADING...")
+q.load("./QEPPI/QEPPI.model")
+```
+
+
+https://github.com/ohuelab/QEPPI  
 
 
 ## License
