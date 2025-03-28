@@ -52,7 +52,7 @@ https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 
 ```python
 # calculate QRCI with normalization and entropy-based weight optimization
-def calculate_QRCI(smiles_or_mol, weights=None, normalize=True, W_macro=2.0)
+calculate_QRCI(smiles_or_mol, weights=None, normalize=True, W_macro=2.0)
 ```
 
 
@@ -90,8 +90,9 @@ print("QEPPI.model LOADING...")
 q.load("./QEPPI/QEPPI.model")
 ```
 
-
 https://github.com/ohuelab/QEPPI  
+
+
 
 
 ## License
