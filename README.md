@@ -111,6 +111,12 @@ https://github.com/ohuelab/QEPPI
 
 
 
+### Others
+
+**Drug Data From the ChEMBL**
+
+https://github.com/PatWalters/practical_cheminformatics_tutorials/tree/main/misc
+
 
 ## License
 Code is released under MIT LICENSE.
