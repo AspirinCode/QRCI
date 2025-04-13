@@ -50,9 +50,9 @@ https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 
 
 ## QRCI calculation
-QRCI/QRCI_calculate_v1.1.ipynb
+[QRCI/QRCI_calculate_v1.1.ipynb](https://github.com/AspirinCode/QRCI/blob/main/QRCI/QRCI_calculate_v1.1.ipynb)  
 
-Example:[Pacritinib](https://go.drugbank.com/drugs/DB11697)
+Example:[Pacritinib](https://go.drugbank.com/drugs/DB11697)  
 
 
 ```python
