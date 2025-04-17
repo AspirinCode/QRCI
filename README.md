@@ -24,6 +24,7 @@ $RCI=\frac{TRS}{nRingAtoms}$
 where TRS is the total ring size and $nRingAtoms$ is the number of atoms belonging to a ring.
 Ref: Gasteiger, J., & Jochum, C. (1979). An Algorithm for the Perception of Synthetically Important Rings. Journal of Chemical Information and Computer Sciences, 19(1), 43–48. https://doi.org/10.1021/ci60017a011  
 
+![RCI of Drug](https://github.com/AspirinCode/QRCI/blob/main/figures/drugbank5.1.13_apvd_r1r10w900_rci_histdist.png)
 
 ## Requirements
 ```python
