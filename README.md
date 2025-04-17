@@ -70,6 +70,8 @@ print(props)
 
 ```
 
+![RCI of Drug](https://github.com/AspirinCode/QRCI/blob/main/figures/drugbank5.1.13_apvd_r1r10w900_qrci_histdist.png)
+
 
 ## Analysis
 
