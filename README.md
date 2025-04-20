@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/AspirinCode/QRCI)
+
 # QRCI
 
 **A Quantitative Ring Complexity Index for Profiling Ring Topology and Chemical Diversity** 
