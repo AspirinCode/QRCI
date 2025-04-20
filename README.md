@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/AspirinCode/QRCI)
-[![ChemRxiv2025](https://img.shields.io/badge/DOI-10.26434%2Fchemrxiv-mlqwl--v2-green)](https://doi.org/10.26434/chemrxiv-2025-mlqwl-v2)
+[![ChemRxiv2025](https://img.shields.io/badge/DOI-10.26434%2Fchemrxiv--2025--mlqwl--v2-green)](https://doi.org/10.26434/chemrxiv-2025-mlqwl-v2)
 
 
 # QRCI
