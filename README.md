@@ -41,7 +41,7 @@ scipy==1.15.1
 
 ## How to install the tool
 
-QRCI can be installed from pypi ([https://pypi.org/project/novana](https://pypi.org/project/qrci).
+QRCI can be installed from pypi ([https://pypi.org/project/qrci](https://pypi.org/project/qrci).
 
 ```python
 pip install qrci
