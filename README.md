@@ -31,11 +31,24 @@ Ref: Gasteiger, J., & Jochum, C. (1979). An Algorithm for the Perception of Synt
 ![RCI of Drug](https://github.com/AspirinCode/QRCI/blob/main/figures/drugbank5.1.13_apvd_r1r10w900_rci_histdist.png)
 **Distribution of RCI for approved drugs of DrugBank**
 
+```python
+from qrci import calculate_RCI
+
+rci_value = calculate_RCI("C1CCCCC1")
+print(f"RCI: {rci_value:.2f}")
+```
+
 ## Requirements
 ```python
 Python==3.13.2
 rdkit==2025.03.2
 scipy==1.15.1
+```
+
+## Installation
+
+```bash
+pip install qrci
 ```
 
 ## Data
@@ -69,10 +82,24 @@ print(f"QRCI(default/mean weights): {score_mean:.4f}")
 
 ***************************************************************************************
 mol = Chem.MolFromSmiles('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
-props = get_qrci_properties(mol)
+props = get_QRCIproperties(mol)
 print(props)
 #QRCIproperties(nAromHetero=1, nAromCarbo=2, nAliHetero=2, nAliCarbo=0, nSatHetero=1, nSatCarbo=0, nMacrocycles=1)
 
+```
+
+```python
+from QRCI.utils import calculate_strain_factor
+from QRCI.QRCI import QRCICalculator
+from QRCI.RCI import RCICalculator
+
+smiles = 'C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1'
+qrci_calc = QRCICalculator(weights='max')
+rci_calc = RCICalculator()
+qrci_max = qrci_calc(smiles)
+rci_value = rci_calc(smiles)
+print(f"QRCI(max weights): {qrci_max:.3f}")
+print(f"RCI: {rci_value:.2f}")
 ```
 
 ![RCI of Drug](https://github.com/AspirinCode/QRCI/blob/main/figures/drugbank5.1.13_apvd_r1r10w900_qrci_histdist.png)
