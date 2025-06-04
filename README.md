@@ -38,6 +38,33 @@ rdkit==2025.03.2
 scipy==1.15.1
 ```
 
+
+## How to install the tool
+
+QRCI can be installed from pypi ([https://pypi.org/project/novana](https://pypi.org/project/qrci).
+
+```python
+pip install qrci
+```python
+
+### Usage
+
+```python
+from QRCI.QRCI import QRCICalculator, get_QRCIproperties
+from QRCI.RCI import RCICalculator
+
+qrci_calc = QRCICalculator(weights='mean')
+score_mean = qrci_calc('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
+print(f"QRCI(default/mean weights): {score_mean:.4f}")
+#QRCI(default/mean weights): 4.0330
+
+***************************************************************************************
+mol = Chem.MolFromSmiles('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
+props = get_qrci_properties(mol)
+print(props)
+#QRCIproperties(nAromHetero=1, nAromCarbo=2, nAliHetero=2, nAliCarbo=0, nSatHetero=1, nSatCarbo=0, nMacrocycles=1, TRS=41, nRingAtom=32, nFusedRing=4, SF=1.0857142857142856)
+```python
+
 ## Data
 
 * [DrugBank](https://go.drugbank.com/)  
