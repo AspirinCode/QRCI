@@ -25,7 +25,7 @@ $\mathrm{QRCI}=\frac{\mathrm{TRS}}{N_{\mathrm{ra}}}\left(1+\frac{N_{\mathrm{fr}}
 
 ### Ring Complexity Index
 
-$\mathrm{CR}(R)=\frac{\mathrm{SREL}(R)}{\mathrm{SEL}(R)}$  
+$\mathrm{RCI}(R)=\mathrm{CR}(R)=\frac{\mathrm{SREL}(R)}{\mathrm{SEL}(R)}$  
 $\mathrm{SREL}(R)$ counts the total number of atom participations across all rings, including duplicate counts if atoms belong to multiple rings. $\mathrm{SEL}(R)$ is the number of unique atoms that appear in at least one ring.  
 **CR** (Complexity Ratio) of ring systems **R**, **CR(R)** measures how much ring overlap exists. Higher **CR(R)** indicates more shared atoms between rings, hence greater complexity.
 
