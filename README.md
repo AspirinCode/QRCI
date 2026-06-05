@@ -174,16 +174,20 @@ https://github.com/ohuelab/QEPPI
 
 **Drug Data From the ChEMBL**
 
+
 https://github.com/PatWalters/practical_cheminformatics_tutorials/tree/main/misc
 
 ![RCI/QRCI of Drugs by Era](https://github.com/AspirinCode/QRCI/blob/main/figures/drug2025_by_year_rci_qrci_Trend_1year_dist.png)
 **Trend of RCl/QRCl Over Time (approved drugs of ChEMBL 35)**
 
+
 ## License
 Code is released under MIT LICENSE.
 
 
+
 ## Cite
+
 
 * Gasteiger, J. and Jochum, C., 1979. An algorithm for the perception of synthetically important rings. Journal of Chemical Information and Computer Sciences, 19(1), pp.43-48.
 * Ertl, P., Schuffenhauer, A. Estimation of synthetic accessibility score of drug-like molecules based on molecular complexity and fragment contributions. J Cheminform 1, 8 (2009). https://doi.org/10.1186/1758-2946-1-8
