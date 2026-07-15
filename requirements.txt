@@ -1,0 +1,11 @@
+# Python 3.13.2 is recommended for this project.
+rdkit==2026.03.4
+scipy==1.15.1
+numpy
+pandas
+matplotlib
+seaborn
+mols2grid
+useful-rdkit-utils
+ipykernel
+jupyterlab
