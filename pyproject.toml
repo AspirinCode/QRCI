@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qrci"
+version = "0.1.5"
+description = "Quantitative Ring Complexity Index"
+readme = "README.md"
+authors = [{name="Jianmin Wang"}]
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+
+dependencies = [
+    "rdkit",
+    "numpy"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["QRCI*"]
+
+[project.urls]
+Repository = "https://github.com/AspirinCode/QRCI"

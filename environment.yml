@@ -13,5 +13,6 @@ dependencies:
   - jupyterlab
   - pip
   - pip:
+      - -e .
       - mols2grid
       - useful-rdkit-utils

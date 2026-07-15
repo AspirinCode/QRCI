@@ -77,7 +77,7 @@ print(f"QRCI(default/mean weights): {score_mean:.4f}")
 
 ***************************************************************************************
 mol = Chem.MolFromSmiles('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
-props = get_qrci_properties(mol)
+props = get_QRCIproperties(mol)
 print(props)
 #QRCIproperties(nAromHetero=1, nAromCarbo=2, nAliHetero=2, nAliCarbo=0, nSatHetero=1, nSatCarbo=0, nMacrocycles=1, TRS=41, nRingAtom=32, nFusedRing=4, SF=1.0857142857142856)
 ```
@@ -113,7 +113,7 @@ print(f"QRCI(default/mean weights): {score_mean:.4f}")
 
 ***************************************************************************************
 mol = Chem.MolFromSmiles('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
-props = get_qrci_properties(mol)
+props = get_QRCIproperties(mol)
 print(props)
 #QRCIproperties(nAromHetero=1, nAromCarbo=2, nAliHetero=2, nAliCarbo=0, nSatHetero=1, nSatCarbo=0, nMacrocycles=1)
 
