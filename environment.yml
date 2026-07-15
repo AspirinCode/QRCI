@@ -16,3 +16,4 @@ dependencies:
       - -e .
       - mols2grid
       - useful-rdkit-utils
+      - QEPPIcommunity

@@ -10,3 +10,4 @@ mols2grid
 useful-rdkit-utils
 ipykernel
 jupyterlab
+QEPPIcommunity
