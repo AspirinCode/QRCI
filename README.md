@@ -45,6 +45,17 @@ scipy==1.15.1
 ```
 
 
+```python
+conda env create -f environment.yml
+conda activate qrci
+
+or
+
+pip install -r requirements.txt
+
+```
+
+
 ## How to install the tool
 
 QRCI can be installed from pypi ([https://pypi.org/project/qrci](https://pypi.org/project/qrci)).
