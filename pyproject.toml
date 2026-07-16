@@ -16,6 +16,22 @@ dependencies = [
     "numpy"
 ]
 
+[project.optional-dependencies]
+analysis = [
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "mols2grid",
+    "useful-rdkit-utils",
+    "QEPPIcommunity",
+    "ipykernel",
+    "jupyterlab"
+]
+test = [
+    "pytest"
+]
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["QRCI*"]

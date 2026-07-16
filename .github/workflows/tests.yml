@@ -1,0 +1,23 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          activate-environment: qrci
+          environment-file: environment.yml
+          use-mamba: true
+      - name: Install test dependencies
+        shell: bash -l {0}
+        run: pip install -e ".[test]"
+      - name: Run tests
+        shell: bash -l {0}
+        run: pytest -q

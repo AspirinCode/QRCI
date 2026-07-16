@@ -4,92 +4,101 @@
 
 # QRCI
 
-**A Quantitative Ring Complexity Index for Profiling Ring Topology and Chemical Diversity** 
+**A Quantitative Ring Complexity Index for Profiling Ring Topology and Chemical Diversity**
 
-![QRCI](https://github.com/AspirinCode/qrci/blob/main/figures/qrci_cover.png)
+![QRCI](https://github.com/AspirinCode/QRCI/blob/main/figures/qrci_cover.png)
 
-### Quantitative Ring Complexity Index
+## Quantitative Ring Complexity Index
 
-$\mathrm{QRCI}=\frac{\mathrm{TRS}}{N_{\mathrm{ra}}}\left(1+\frac{N_{\mathrm{fr}}}{N_{\mathrm{r}}+1}\right)+\sum_{r}\left[\frac{360}{360-\alpha_{\mathrm{ideal}}(\ell_{r})}\cdot\frac{1}{\ell_{r}}\cdot\lambda_{M}(\ell_{r})\right]+\frac{\sum W_{i}\cdot D_{i}}{\sqrt{N_{\mathrm{ra}}\cdot\mathrm{TRS}}}+\frac{\log(N_{\mathrm{ta}})}{N_{\mathrm{r}}+1}+W_{m}\cdot\frac{N_{\mathrm{mr}}}{N_{\mathrm{r}}+1}$  
+$\mathrm{QRCI}=\frac{\mathrm{TRS}}{N_{\mathrm{ra}}}\left(1+\frac{N_{\mathrm{fr}}}{N_{\mathrm{r}}+1}\right)+\sum_{r}\left[\frac{360}{360-\alpha_{\mathrm{ideal}}(\ell_{r})}\cdot\frac{1}{\ell_{r}}\cdot\lambda_{M}(\ell_{r})\right]+\frac{\sum W_{i}\cdot D_{i}}{\sqrt{N_{\mathrm{ra}}\cdot\mathrm{TRS}}}+\frac{\log(N_{\mathrm{ta}})}{N_{\mathrm{r}}+1}+W_{m}\cdot\frac{N_{\mathrm{mr}}}{N_{\mathrm{r}}+1}$
 
 * **TRS** (Total Ring Size): Sum of all ring sizes.
 * **$N_{\mathrm{ra}}$**: Total number of atoms in all rings.
-* **$N_{\mathrm{r}}$**: Total number of rings
+* **$N_{\mathrm{r}}$**: Total number of rings.
 * **$N_{\mathrm{fr}}$** (Fused Rings): Count of rings sharing atoms or bonds.
-* **$N_{\mathrm{ta}}$**: Total number of atoms
-* **$N_{\mathrm{mr}}$**: total number of macrocycles
+* **$N_{\mathrm{ta}}$**: Total number of atoms.
+* **$N_{\mathrm{mr}}$**: Total number of macrocycles.
 * **$W_{m}$**: Weight for macrocycle descriptors.
 * **$W_{i}$**: Weight for topological descriptors.
 * **$D_{i}$**: Topological ring diversity descriptor.
 
+## Ring Complexity Index
 
-### Ring Complexity Index
+$\mathrm{RCI}(R)=\mathrm{CR}(R)=\frac{\mathrm{SREL}(R)}{\mathrm{SEL}(R)}$
 
-$\mathrm{RCI}(R)=\mathrm{CR}(R)=\frac{\mathrm{SREL}(R)}{\mathrm{SEL}(R)}$  
-$\mathrm{SREL}(R)$ counts the total number of atom participations across all rings, including duplicate counts if atoms belong to multiple rings. $\mathrm{SEL}(R)$ is the number of unique atoms that appear in at least one ring.  
-**CR** (Complexity Ratio) of ring systems **R**, **CR(R)** measures how much ring overlap exists. Higher **CR(R)** indicates more shared atoms between rings, hence greater complexity.
+$\mathrm{SREL}(R)$ counts the total number of atom participations across all rings, including duplicate counts if atoms belong to multiple rings. $\mathrm{SEL}(R)$ is the number of unique atoms that appear in at least one ring.
 
+$RCI=\frac{TRS}{nRingAtoms}$, where TRS is the total ring size and `nRingAtoms` is the number of atoms belonging to a ring.
 
-$RCI=\frac{TRS}{nRingAtoms}$  
-where TRS is the total ring size and $nRingAtoms$ is the number of atoms belonging to a ring.
-Ref: Gasteiger, J., & Jochum, C. (1979). An Algorithm for the Perception of Synthetically Important Rings. Journal of Chemical Information and Computer Sciences, 19(1), 43–48. https://doi.org/10.1021/ci60017a011  
+Reference: Gasteiger, J., & Jochum, C. (1979). An Algorithm for the Perception of Synthetically Important Rings. Journal of Chemical Information and Computer Sciences, 19(1), 43-48. https://doi.org/10.1021/ci60017a011
 
 ![RCI of Drug](https://github.com/AspirinCode/QRCI/blob/main/figures/drugbank5.1.13_apvd_r1r10w900_rci_histdist.png)
-**Distribution of RCI for approved drugs of DrugBank**
 
-## Requirements
-```python
-Python==3.13.2
-rdkit==2025.03.2
-scipy==1.15.1
-```
+## Installation
 
+The reproducible project environment is defined in [environment.yml](environment.yml):
 
-```python
+```bash
 conda env create -f environment.yml
 conda activate qrci
-
-or
-
-pip install -r requirements.txt
-
 ```
 
+For pip-based local development:
 
-## How to install the tool
+```bash
+pip install -r requirements.txt
+```
 
-QRCI can be installed from pypi ([https://pypi.org/project/qrci](https://pypi.org/project/qrci)).
+For package-only use from PyPI:
 
-```python
+```bash
 pip install qrci
 ```
 
-### Usage
+Current project environment targets:
+
+```text
+Python==3.13.2
+rdkit==2026.03.4
+scipy==1.15.1
+```
+
+## Usage
 
 ```python
+from rdkit import Chem
 from QRCI.QRCI import QRCICalculator, get_QRCIproperties
 from QRCI.RCI import RCICalculator
 
-qrci_calc = QRCICalculator(weights='mean')
-score_mean = qrci_calc('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
-print(f"QRCI(default/mean weights): {score_mean:.4f}")
-#QRCI(default/mean weights): 4.0330
+smiles = "C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1"
 
-***************************************************************************************
-mol = Chem.MolFromSmiles('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
+rci_calc = RCICalculator()
+print(f"RCI: {rci_calc(smiles):.4f}")
+
+qrci_calc = QRCICalculator(weights="mean")
+score_mean = qrci_calc(smiles)
+print(f"QRCI(default/mean weights): {score_mean:.4f}")
+# QRCI(default/mean weights): 4.0330
+
+mol = Chem.MolFromSmiles(smiles)
 props = get_QRCIproperties(mol)
 print(props)
-#QRCIproperties(nAromHetero=1, nAromCarbo=2, nAliHetero=2, nAliCarbo=0, nSatHetero=1, nSatCarbo=0, nMacrocycles=1, TRS=41, nRingAtom=32, nFusedRing=4, SF=1.0857142857142856)
 ```
+
+## Notebooks
+
+* [QRCI_calculate_pip_v2.1.ipynb](QRCI_calculate_pip_v2.1.ipynb): compact QRCI/RCI calculation example using the pip-compatible package API.
+* [QRCI_calculate_v1.1.ipynb](QRCI_calculate_v1.1.ipynb): extended analysis workflow with QEPPI, SA score, NP score, QED, and plotting.
 
 ## Data
 
-* [DrugBank](https://go.drugbank.com/)  
-* [iPPI-DB](https://ippidb.pasteur.fr/)  
-* [COCONUT: the COlleCtion of Open NatUral producTs](https://coconut.naturalproducts.net/)  
+* [DrugBank](https://go.drugbank.com/)
+* [iPPI-DB](https://ippidb.pasteur.fr/)
+* [COCONUT: the COlleCtion of Open NatUral producTs](https://coconut.naturalproducts.net/)
 * [ChEMBL35](https://www.ebi.ac.uk/chembl/)
-* [PubChem](https://pubchem.ncbi.nlm.nih.gov/)  
+* [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
 
+## Analysis Helpers
 
 ### Molecular Standardization
 
@@ -97,54 +106,34 @@ https://www.rdkit.org/docs/source/rdkit.Chem.MolStandardize.rdMolStandardize.htm
 
 https://github.com/rdkit/rdkit/blob/master/Docs/Notebooks/MolStandardize.ipynb
 
-
-
-## QRCI calculation
-[QRCI/QRCI_calculate_v1.1.ipynb](https://github.com/AspirinCode/QRCI/blob/main/QRCI/QRCI_calculate_v1.1.ipynb)  
-
-Example:[Pacritinib](https://go.drugbank.com/drugs/DB11697)  
-
-
-```python
-qrci_calc = QRCICalculator(weights='mean')
-score_mean = qrci_calc('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
-print(f"QRCI(default/mean weights): {score_mean:.4f}")
-#QRCI(default/mean weights): 4.0330
-
-***************************************************************************************
-mol = Chem.MolFromSmiles('C1=CCOCc2cc(ccc2OCCN2CCCC2)Nc2nccc(n2)-c2cccc(c2)COC1')
-props = get_QRCIproperties(mol)
-print(props)
-#QRCIproperties(nAromHetero=1, nAromCarbo=2, nAliHetero=2, nAliCarbo=0, nSatHetero=1, nSatCarbo=0, nMacrocycles=1)
-
-```
-
-![RCI of Drug](https://github.com/AspirinCode/QRCI/blob/main/figures/drugbank5.1.13_apvd_r1r10w900_qrci_histdist.png)
-**Distribution of QRCI for approved drugs of DrugBank**
-
-## Analysis
-
 ### Spacial Score
 
 ```python
-rdkit.Chem.SpacialScore.SPS(mol, normalize=True)
+from rdkit.Chem.SpacialScore import SPS
+
+sps_score = SPS(mol, normalize=True)
 ```
 
-https://rdkit.org/docs/source/rdkit.Chem.SpacialScore.html  
+https://rdkit.org/docs/source/rdkit.Chem.SpacialScore.html
 
-https://github.com/frog2000/Spacial-Score  
+### SA Score and NP Score
 
-
-### SAscore
+The extended notebook uses RDKit contrib modules:
 
 ```python
-#Calculating SAscore
-import sascorer
-sascore = sascorer.calculateScore()
+import os
+import sys
+
+sys.path.append(os.path.join(os.environ["CONDA_PREFIX"], "share", "RDKit", "Contrib"))
+from SA_Score import sascorer
+from NP_Score import npscorer
+
+sascore = sascorer.calculateScore(mol)
+fscore = npscorer.readNPModel()
+npscore = npscorer.scoreMol(mol, fscore)
 ```
 
 https://greglandrum.github.io/rdkit-blog/posts/2023-12-01-using_sascore_and_npscore.html
-
 
 ### QED
 
@@ -157,56 +146,44 @@ mol = Chem.MolFromSmiles(smiles)
 
 qed_score = QED.qed(mol)
 print(f"QED Score: {qed_score:.3f}")
-#QED Score: 0.605
+# QED Score: 0.605
 ```
 
-https://www.rdkit.org/docs/source/rdkit.Chem.QED.html#module-rdkit.Chem.QED
-
-
 ### QEPPI
-quantitative estimate of protein-protein interaction targeting drug-likeness  
+
+QEPPI support is provided by the `QEPPIcommunity` package. The package installs as `QEPPI`:
 
 ```python
-#Calculates QEPPI
-q = ppi.QEPPI_Calculator()
-print("QEPPI.model LOADING...")
-q.load("./QEPPI/QEPPI.model")
+from rdkit import Chem
+from QEPPI import QEPPI_Calculator, get_qeppi_properties
+
+q = QEPPI_Calculator()
+q.read()
 
 smiles = "C=CCN1CC(C(=O)N(CCCN(C)C)C(=O)NCC)C[C@@H]2c3cccc4[nH]cc(c34)C[C@H]21"
 mol = Chem.MolFromSmiles(smiles)
+
 print(q.qeppi(mol))
+print(get_qeppi_properties(mol))
 ```
 
-[QEPPIcommunity](https://pypi.org/project/QEPPIcommunity/) 
+[QEPPIcommunity](https://pypi.org/project/QEPPIcommunity/)
 
 https://github.com/AspirinCode/QEPPI-community
 
+## Figures
 
-### Others
+![Distribution of QRCI for approved drugs](https://github.com/AspirinCode/QRCI/blob/main/figures/drugbank5.1.13_apvd_r1r10w900_qrci_histdist.png)
 
-**Drug Data From the ChEMBL**
-
-
-https://github.com/PatWalters/practical_cheminformatics_tutorials/tree/main/misc
-
-![RCI/QRCI of Drugs by Era](https://github.com/AspirinCode/QRCI/blob/main/figures/drug2025_by_year_rci_qrci_Trend_1year_dist.png)
-**Trend of RCl/QRCl Over Time (approved drugs of ChEMBL 35)**
-
+![Trend of RCI/QRCI over time](https://github.com/AspirinCode/QRCI/blob/main/figures/drug2025_by_year_rci_qrci_Trend_1year_dist.png)
 
 ## License
-Code is released under MIT LICENSE.
 
-
+Code is released under the MIT License.
 
 ## Cite
 
-
 * Gasteiger, J. and Jochum, C., 1979. An algorithm for the perception of synthetically important rings. Journal of Chemical Information and Computer Sciences, 19(1), pp.43-48.
 * Ertl, P., Schuffenhauer, A. Estimation of synthetic accessibility score of drug-like molecules based on molecular complexity and fragment contributions. J Cheminform 1, 8 (2009). https://doi.org/10.1186/1758-2946-1-8
-* Krzyzanowski, A., Pahl, A., Grigalunas, M., & Waldmann, H. (2023). Spacial Score─A Comprehensive Topological Indicator for Small-Molecule Complexity. Journal of medicinal chemistry, 66(18), 12739–12750. https://doi.org/10.1021/acs.jmedchem.3c00689
-* Wang J, Xu K, Ma T, Zhang X, Ma P, Li  C, et al. A Quantitative Ring Complexity Index for Profiling Ring Topology and Chemical Diversity. ChemRxiv. 2025; doi:[10.26434/chemrxiv-2025-mlqwl-v2](https://doi.org/10.26434/chemrxiv-2025-mlqwl-v2)  This content is a preprint and has not been peer-reviewed.
-
-
-
-
-
+* Krzyzanowski, A., Pahl, A., Grigalunas, M., & Waldmann, H. (2023). Spacial Score: A Comprehensive Topological Indicator for Small-Molecule Complexity. Journal of Medicinal Chemistry, 66(18), 12739-12750. https://doi.org/10.1021/acs.jmedchem.3c00689
+* Wang J, Xu K, Ma T, Zhang X, Ma P, Li C, et al. A Quantitative Ring Complexity Index for Profiling Ring Topology and Chemical Diversity. ChemRxiv. 2025; doi: [10.26434/chemrxiv-2025-mlqwl-v2](https://doi.org/10.26434/chemrxiv-2025-mlqwl-v2). This content is a preprint and has not been peer-reviewed.
