@@ -177,8 +177,9 @@ mol = Chem.MolFromSmiles(smiles)
 print(q.qeppi(mol))
 ```
 
-https://github.com/ohuelab/QEPPI  
+[QEPPIcommunity](https://pypi.org/project/QEPPIcommunity/) 
 
+https://github.com/AspirinCode/QEPPI-community
 
 
 ### Others
