@@ -53,6 +53,12 @@ For package-only use from PyPI:
 
 ```bash
 pip install qrci
+
+#https://pypi.org/project/useful-rdkit-utils/
+pip install useful-rdkit-utils
+
+#https://pypi.org/project/mols2grid/
+pip install mols2grid
 ```
 
 Current project environment targets:
